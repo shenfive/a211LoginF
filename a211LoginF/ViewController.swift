@@ -20,14 +20,14 @@ class ViewController: UIViewController {
     
     
     
+    @IBOutlet weak var theButton: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginButton = FBLoginButton()
-        loginButton.center = view.center
+        let loginButton = FBLoginButton(frame: theButton.bounds)
         loginButton.permissions = ["public_profile", "email"]
-        view.addSubview(loginButton)
+        theButton.addSubview(loginButton)
         
         if let token = AccessToken.current, !token.isExpired{
             print("己登入")
