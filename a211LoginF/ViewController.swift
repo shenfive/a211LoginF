@@ -10,12 +10,29 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController {
     
+    
+//    // Swift override func viewDidLoad() { super.viewDidLoad()
+//    if let token = AccessToken.current,
+//           !token.isExpired {
+//    // User is logged in, do work such as go to next view controller. } }
+        
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let loginButton = FBLoginButton()
         loginButton.center = view.center
         view.addSubview(loginButton)
+        
+        if let token = AccessToken.current, !token.isExpired{
+            print("己登入")
+        }else{
+            print("己登出")
+        }
         
         
         // Do any additional setup after loading the view.
