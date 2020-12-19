@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         
         let loginButton = FBLoginButton()
         loginButton.center = view.center
+        loginButton.permissions = ["public_profile", "email"]
         view.addSubview(loginButton)
         
         if let token = AccessToken.current, !token.isExpired{
@@ -38,6 +39,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    
+    // Swift // // Extend the code sample from 6a.Add Facebook Login to Your Code // Add to your viewDidLoad method:
+    
 }
 
